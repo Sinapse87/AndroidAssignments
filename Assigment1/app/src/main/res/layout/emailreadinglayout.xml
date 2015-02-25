@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/emailReadingLayout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/senderTextField"
+        android:layout_gravity="center_horizontal|top"
+        android:text="@string/sender"
+        android:textColor="#ff7b7b7b"
+         />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/ReceiverTextField"
+        android:layout_gravity="top"
+        android:text="@string/receiver"
+        android:layout_below="@+id/senderTextField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff7b7b7b" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/MultipleReceiverTextField"
+        android:text="@string/multipleReceiver"
+        android:layout_gravity="top"
+        android:layout_below="@+id/ReceiverTextField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff7b7b7b" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:id="@+id/emailBodyTextView"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/emailBody"
+        android:gravity="top"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff7b7b7b" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonBack"
+        android:id="@+id/buttonBack"
+        android:layout_gravity="right"
+        android:layout_below="@+id/emailBodyTextView"
+        android:layout_centerHorizontal="true"
+        android:onClick="backToEmailComposition"
+        android:nestedScrollingEnabled="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailSubject"
+        android:id="@+id/editText"
+        android:text="@string/subject"
+        android:gravity="top"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/MultipleReceiverTextField"
+        android:textColor="#ff7b7b7b" />
+
+</RelativeLayout>
