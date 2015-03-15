@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Assignment2</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="apple">Apple</string>
+    <string name="banana">Banana</string>
+    <string name="kiwi">Kiwi</string>
     <string name="action_settings">Settings</string>
 </resources>
