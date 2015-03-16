@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:scrollbarFadeDuration="0"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <!--  ListRow Left sied Thumbnail image -->
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/image_bg"
+        android:layout_marginRight="5dip">
+
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:onClick="openFruitView"
+            android:clickable="true"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/fruitTextView"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_toEndOf="@+id/thumbnail"/>
+</RelativeLayout>
+</ScrollView>

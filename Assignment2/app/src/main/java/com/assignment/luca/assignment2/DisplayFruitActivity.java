@@ -16,7 +16,7 @@ public class DisplayFruitActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.single_fruit_portrait);
+        setContentView(R.layout.single_fruit);
 
         //Get extra data from the intent - image Id of the image clicked and description
         Intent intent = getIntent();

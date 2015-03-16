@@ -63,7 +63,7 @@ public class ListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
         if (convertView == null) //Creating the imageView from the list view layout
-            vi = inflater.inflate(R.layout.list_row_portrait, null);
+            vi = inflater.inflate(R.layout.list_row, null);
 
         //Getting view elements to populate
         ImageView thumb_imageView = (ImageView) vi.findViewById(R.id.list_image); // thumb image

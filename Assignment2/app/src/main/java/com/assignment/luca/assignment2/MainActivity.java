@@ -31,10 +31,10 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Setting the content view to be layout.activity_main_portrait
+        //Setting the content view to be layout.activity_main
         //Set the activity content from a layout resource.  The resource will be
         //inflated, adding all top-level views to the activity.
-        setContentView(R.layout.activity_main_portrait);
+        setContentView(R.layout.activity_main);
 
         //Getting the array of images
         ArrayList<HashMap<String,String>> fruitImageList = new ArrayList<>();
