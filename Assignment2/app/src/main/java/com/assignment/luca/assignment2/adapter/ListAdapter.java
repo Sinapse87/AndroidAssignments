@@ -8,15 +8,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.assignment.luca.assignment2.R;
+import com.assignment.luca.assignment2.model.FruitImage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class LazyAdapter extends BaseAdapter {
+public class ListAdapter extends BaseAdapter {
+
+    static final String IMAGE_ID = "id";
+    static final String DESCRIPTION = "description";
+    static final int BANANA_ID = 1;
 
     private Activity activity;
-    private ArrayList<Integer> data;
+    private ArrayList<HashMap<String,String>> data;
 
     //Instantiates a layout XML file into its corresponding View objects.
     // It is never used directly. Instead, use getLayoutInflater() or
@@ -26,7 +33,7 @@ public class LazyAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
 
 
-    public LazyAdapter(Activity a, ArrayList<Integer> d) {
+    public ListAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
         activity = a;
         data = d;
         inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -56,17 +63,26 @@ public class LazyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
         if (convertView == null) //Creating the imageView from the list view layout
-            vi = inflater.inflate(R.layout.list_row, null);
+            vi = inflater.inflate(R.layout.list_row_portrait, null);
 
-        //Getting the list view image
-        ImageView thumb_image = (ImageView) vi.findViewById(R.id.list_image); // thumb image
-        ImageView arrow_image = (ImageView) vi.findViewById(R.id.arrow);
-        int fruitIdentifier = data.get(position);
-        Drawable drawable = activity.getResources().getDrawable(fruitIdentifier);
-        Drawable drawable1 = activity.getResources().getDrawable(R.drawable.arrow);
-        thumb_image.setImageDrawable(drawable);
-        arrow_image.setImageDrawable(drawable1);
+        //Getting view elements to populate
+        ImageView thumb_imageView = (ImageView) vi.findViewById(R.id.list_image); // thumb image
+        TextView fruitTextView = (TextView) vi.findViewById(R.id.fruitTextView);
+        ImageView arrow_imageView = (ImageView) vi.findViewById(R.id.arrow);
 
+        //Getting data from the map passed by the main activity
+        HashMap <String,String> fruitRowMap = data.get(position);
+        int fruitId = Integer.parseInt(fruitRowMap.get(IMAGE_ID));
+        Drawable fruitDrawable = activity.getResources().getDrawable(fruitId);
+        Drawable arrowDrawable = activity.getResources().getDrawable(R.drawable.arrow);
+        String fruitDescription = fruitRowMap.get(DESCRIPTION);
+        FruitImage fruitImage = new FruitImage(fruitId,fruitDescription);
+
+        //Setting data collected
+        fruitTextView.setText(fruitDescription);
+        thumb_imageView.setImageDrawable(fruitDrawable);
+        thumb_imageView.setTag(fruitImage);
+        arrow_imageView.setImageDrawable(arrowDrawable);
 
         return vi;
     }
