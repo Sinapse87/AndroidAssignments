@@ -9,5 +9,5 @@
     <string name="Pumpkin">Pumpkin</string>
     <string name="Orange">Orange</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_display_fruit">You have chosen:</string>
+    <string name="title_activity_display_fruit">Your Fruit</string>
 </resources>

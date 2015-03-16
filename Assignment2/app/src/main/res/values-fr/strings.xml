@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FruitsFr</string>
+    <string name="Apple">Pomme</string>
+    <string name="Banana">Banane</string>
+    <string name="Kiwi">Kiwi</string>
+    <string name="Coconut">Coco</string>
+    <string name="Melon">Melon</string>
+    <string name="Lemon">Citron</string>
+    <string name="Pumpkin">Citrouille</string>
+    <string name="Orange">Orange</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="title_activity_display_fruit">Vos fruits</string>
+</resources>

@@ -82,7 +82,7 @@ public class ListAdapter extends BaseAdapter {
         FruitImage fruitImage = new FruitImage(fruitId,value);
 
         //Setting data collected
-        fruitTextView.setText(fruitDescription);
+        fruitTextView.setText(value);
         thumb_imageView.setImageDrawable(fruitDrawable);
         thumb_imageView.setTag(fruitImage);
         arrow_imageView.setImageDrawable(arrowDrawable);
