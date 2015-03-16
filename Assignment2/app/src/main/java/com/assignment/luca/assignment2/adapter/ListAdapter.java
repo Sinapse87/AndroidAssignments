@@ -76,7 +76,10 @@ public class ListAdapter extends BaseAdapter {
         Drawable fruitDrawable = activity.getResources().getDrawable(fruitId);
         Drawable arrowDrawable = activity.getResources().getDrawable(R.drawable.arrow);
         String fruitDescription = fruitRowMap.get(DESCRIPTION);
-        FruitImage fruitImage = new FruitImage(fruitId,fruitDescription);
+        int id = activity.getResources().getIdentifier(fruitDescription, "string", activity.getPackageName());
+        String value = id == 0 ? "" : (String) activity.getResources().getText(id);
+
+        FruitImage fruitImage = new FruitImage(fruitId,value);
 
         //Setting data collected
         fruitTextView.setText(fruitDescription);

@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">Fruitify</string>
-    <string name="apple">Apple</string>
-    <string name="banana">Banana</string>
-    <string name="kiwi">Kiwi</string>
+    <string name="Apple">Apple</string>
+    <string name="Banana">Banana</string>
+    <string name="Kiwi">Kiwi</string>
+    <string name="Coconut">Coconut</string>
+    <string name="Melon">Melon</string>
+    <string name="Lemon">Lemon</string>
+    <string name="Pumpkin">Pumpkin</string>
+    <string name="Orange">Orange</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_display_fruit">You have chosen:</string>
 </resources>
