@@ -73,6 +73,7 @@ public class ListAdapter extends BaseAdapter {
         TextView fruitTextView = (TextView) vi.findViewById(R.id.fruitTextView);
         ImageView arrow_imageView = (ImageView) vi.findViewById(R.id.arrow);
 
+
         //Getting data from the map passed by the main activity
         HashMap <String,String> fruitRowMap = data.get(position);
         int fruitId = Integer.parseInt(fruitRowMap.get(IMAGE_ID));
