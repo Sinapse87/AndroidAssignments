@@ -44,14 +44,9 @@ public class MainActivity extends ActionBarActivity {
         //Finds a view that was identified by the id attribute from the XML that
         //was processed in {@link #onCreate}.
         listView =(ListView)findViewById(R.id.listView);
+
         // Getting listAdapter by passing xml data ArrayList
-        listAdapter =new ListAdapter(this, fruitImageList);
-        /**
-        * Sets the data behind this ListView.
-                *
-        * The ListAdapter which is responsible for maintaining the
-        *        data backing this list and for producing a view to represent an
-        *        item in that data set.*/
+        listAdapter=new ListAdapter(this, fruitImageList);
         listView.setAdapter(listAdapter);
     }
 

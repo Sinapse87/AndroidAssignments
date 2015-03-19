@@ -2,7 +2,11 @@ package com.assignment.luca.assignment2.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +24,6 @@ public class ListAdapter extends BaseAdapter {
 
     static final String IMAGE_ID = "id";
     static final String DESCRIPTION = "description";
-    static final int BANANA_ID = 1;
 
     private Activity activity;
     private ArrayList<HashMap<String,String>> data;
@@ -77,16 +80,29 @@ public class ListAdapter extends BaseAdapter {
         Drawable arrowDrawable = activity.getResources().getDrawable(R.drawable.arrow);
         String fruitDescription = fruitRowMap.get(DESCRIPTION);
         int id = activity.getResources().getIdentifier(fruitDescription, "string", activity.getPackageName());
-        String value = id == 0 ? "" : (String) activity.getResources().getText(id);
+        String fruitDescriptionValue = id == 0 ? "" : (String) activity.getResources().getText(id);
 
-        FruitImage fruitImage = new FruitImage(fruitId,value);
+        FruitImage fruitImage = new FruitImage(fruitId,fruitDescriptionValue);
 
         //Setting data collected
-        fruitTextView.setText(value);
+        Spannable spannableBody = getSpannable(fruitDescriptionValue);
+
+        populateViews(thumb_imageView, fruitTextView, arrow_imageView, fruitDrawable, arrowDrawable, fruitImage, spannableBody);
+
+        return vi;
+    }
+
+    private void populateViews(ImageView thumb_imageView, TextView fruitTextView, ImageView arrow_imageView, Drawable fruitDrawable, Drawable arrowDrawable, FruitImage fruitImage, Spannable spannableBody) {
+        fruitTextView.setText(spannableBody);
         thumb_imageView.setImageDrawable(fruitDrawable);
         thumb_imageView.setTag(fruitImage);
         arrow_imageView.setImageDrawable(arrowDrawable);
+    }
 
-        return vi;
+    private Spannable getSpannable(String fruitDescriptionValue) {
+        Spannable spannableBody = new SpannableString(fruitDescriptionValue);
+        spannableBody.setSpan(new ForegroundColorSpan(Color.RED),0,1,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableBody.setSpan(new ForegroundColorSpan(Color.BLUE),1,fruitDescriptionValue.length(),Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return spannableBody;
     }
 }
