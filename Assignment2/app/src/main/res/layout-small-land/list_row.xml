@@ -35,14 +35,6 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/arrow"
-        android:layout_width="20dip"
-        android:layout_height="20dip"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

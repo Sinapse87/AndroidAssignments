@@ -71,14 +71,12 @@ public class ListAdapter extends BaseAdapter {
         //Getting view elements to populate
         ImageView thumb_imageView = (ImageView) vi.findViewById(R.id.list_image); // thumb image
         TextView fruitTextView = (TextView) vi.findViewById(R.id.fruitTextView);
-        ImageView arrow_imageView = (ImageView) vi.findViewById(R.id.arrow);
 
 
         //Getting data from the map passed by the main activity
         HashMap <String,String> fruitRowMap = data.get(position);
         int fruitId = Integer.parseInt(fruitRowMap.get(IMAGE_ID));
         Drawable fruitDrawable = activity.getResources().getDrawable(fruitId);
-        Drawable arrowDrawable = activity.getResources().getDrawable(R.drawable.arrow);
         String fruitDescription = fruitRowMap.get(DESCRIPTION);
         int id = activity.getResources().getIdentifier(fruitDescription, "string", activity.getPackageName());
         String fruitDescriptionValue = id == 0 ? "" : (String) activity.getResources().getText(id);
@@ -88,16 +86,15 @@ public class ListAdapter extends BaseAdapter {
         //Setting data collected
         Spannable spannableBody = getSpannable(fruitDescriptionValue);
 
-        populateViews(thumb_imageView, fruitTextView, arrow_imageView, fruitDrawable, arrowDrawable, fruitImage, spannableBody);
+        populateViews(thumb_imageView, fruitTextView,fruitDrawable, fruitImage, spannableBody);
 
         return vi;
     }
 
-    private void populateViews(ImageView thumb_imageView, TextView fruitTextView, ImageView arrow_imageView, Drawable fruitDrawable, Drawable arrowDrawable, FruitImage fruitImage, Spannable spannableBody) {
+    private void populateViews(ImageView thumb_imageView, TextView fruitTextView, Drawable fruitDrawable, FruitImage fruitImage, Spannable spannableBody) {
         fruitTextView.setText(spannableBody);
         thumb_imageView.setImageDrawable(fruitDrawable);
         thumb_imageView.setTag(fruitImage);
-        arrow_imageView.setImageDrawable(arrowDrawable);
     }
 
     private Spannable getSpannable(String fruitDescriptionValue) {
